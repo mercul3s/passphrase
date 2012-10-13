@@ -27,6 +27,7 @@ def main(read, write):
 	f.close()
 	# split on newlines - returns a list
 	words = words.splitlines()
+	stripchars = ('')
 	
 	# will be used to store words and definitions
 	word_dict = {}
@@ -35,6 +36,7 @@ def main(read, write):
 	for word in words:
 		if len(word) > 1:
 			word = word.split(':')
+			# work around for blank lines and single characters
 			try:
 				word_dict[(word[0])] = word[1]
 			except:
@@ -44,9 +46,14 @@ def main(read, write):
 	# open the file we're going to write 
 	g = open(write, 'a')
 	for key, value in word_dict.iteritems():
+
 		print "Word: ", key
 		print "Definition: ", value
-		g.write(key + '\n')
+		if stripchars in key:
+			wordalt = key.split(',')
+			g.write(wordalt[0] + '\n')
+		else:
+			g.write(key + '\n')
 	g.close()
 
 main(readfile, writefile)
