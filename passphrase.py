@@ -2,30 +2,26 @@
 open dictionary file, choose 4 random words from file, insert punctuation
 '''
 import random
-import sys
+from sys import argv
 import string
 
-def open_file():
-	f = open('/usr/share/dict/words')
+readfile = argv[1]
+def open_file(filename):
+	f = open(filename)
 	words = f.read()
 	f.close()
-	words = words.split()
+	words = words.split('\n')
 	return words
 
 def gen_pw(word_list):
 	punctuation = string.punctuation
-
-	f = open('/usr/share/dict/words')
-	word_list = f.read()
-	word_list = word_list.split()
-
-	pass_len = 3
-
+	pass_len = int(raw_input('Enter passphrase length: '))
 	passphrase = ""
 	for length in xrange(pass_len):
 		passphrase += random.choice(word_list) + random.choice(punctuation)
 	print passphrase
+	
 def main():
-	w_list = open_file()
+	w_list = open_file(readfile)
 	gen_pw(w_list)
 main()
