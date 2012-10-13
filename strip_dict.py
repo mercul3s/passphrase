@@ -14,7 +14,8 @@ import os
 	...etc
 
 	First, read open the file for reading, and split into a list on newlines.
-
+	Then loop through the list, and pull out the words and definitions separately (I intend to use the definitions in the future.)
+	Finally, add just the words to a file, each one on a separate line.
 '''
 readfile = argv[1]
 writefile = argv[2]
