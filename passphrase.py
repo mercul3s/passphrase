@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 '''
 open dictionary file, choose 4 random words from file, insert punctuation
 '''
@@ -20,7 +22,8 @@ def gen_pw(word_list):
 	for length in xrange(pass_len):
 		passphrase += random.choice(word_list) + random.choice(punctuation)
 	print passphrase
-	
+	return passphrase
+
 def main():
 	w_list = open_file(readfile)
 	gen_pw(w_list)

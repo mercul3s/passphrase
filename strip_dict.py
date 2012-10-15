@@ -51,7 +51,7 @@ def main(read, write):
 		print "Definition: ", value
 		if stripchars in key:
 			wordalt = key.split(',')
-			g.write(wordalt[0] + '\n')
+			g.write(wordalt[0].replace(' ', '' ) + '\n')
 		else:
 			g.write(key + '\n')
 	g.close()
