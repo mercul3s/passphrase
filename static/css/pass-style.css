@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body { background-color:#B5AEBF;}
+
+p, label	{ color:#81799D; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; }
+h1	{ color:#81799D; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; text-align:center; }
+
+#main {
+	width:450px;
+	height:300px;
+	margin:auto;
+	margin-top:200px;
+	background-color:#F2EFE4;
+	border-radius:10px 10px 10px 10px;
+	border-color:#D9D4C7;
+	border-style:solid;
+	border-width:thick;
+}
+
+#input {
+	text-align:center;
+}

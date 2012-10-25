@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="static/css/pass-style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Slang-based Passphrase Generator</title>
+</head>
+
+<body>
+	<div id="main">
+		<h1>Slang-Passphrase Generator</h1>
+        <form id="input" method="post" action="/enter_length">
+        <label for="length">Enter passphrase length:</label>	
+        <input type="number" name="length" ><br>
+        <p>Choose a language:</p>
+        <label for="aussie">Australian</label>
+        <input type="radio" name="aussie" value="australian">
+        <label for="aussie">British</label>
+        <input type="radio" name="brit" value="british">
+        <label for="aussie">20's Era</label>
+        <input type="radio" name="20s" value="speakeasy">
+        <br><input type="submit"></input>
+        </form>
+
+	</div>
+</body>
+</html>
