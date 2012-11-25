@@ -7,21 +7,33 @@
 </head>
 
 <body>
-	<div id="main">
-		<h1>Slang-Passphrase Generator</h1>
-        <form id="input" method="post" action="/enter_length">
-        <label for="length">Enter passphrase length:</label>	
-        <input type="number" name="length" ><br>
-        <p>Choose a language:</p>
-        <label for="aussie">Australian</label>
-        <input type="radio" name="aussie" value="australian">
-        <label for="aussie">British</label>
-        <input type="radio" name="brit" value="british">
-        <label for="aussie">20's Era</label>
-        <input type="radio" name="20s" value="speakeasy">
-        <br><input type="submit"></input>
-        </form>
-
-	</div>
+    <div id="main">
+        <h1>Slang-Passphrase Generator</h1>
+        <div id="form-layout">
+            <form id="length" method="POST" action="/passphrase">
+                <label for="length">Enter passphrase length:</label>	
+                <input type="text" name="pass-length" size='3'><br>
+                <p>Choose a language:</p>
+                <label for="aussie">Australian</label>
+                <input type="radio" name="slang" value="aussie_words.txt">
+                <!-- <label for="brit">British</label>
+                <input type="radio" name="slang" value="british"> -->
+                <label for="twenties">20's Era</label>
+                <input type="radio" name="slang" value="20s_no_space.txt">
+                <label for="san_francisco">San Francisco</label>
+                <input type="radio" name="slang" value="415words.txt">
+                <br><input type="submit" />
+            </form>
+        </div>
+        <div id='passphrase'>
+                {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                                {% for message in messages %}
+                                <p>{{ message }}</p>
+                             {% endfor %}
+                        {% endif %}
+                {% endwith %}
+        </div>
+    </div>
 </body>
 </html>
