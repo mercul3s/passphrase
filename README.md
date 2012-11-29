@@ -1,7 +1,7 @@
 passphrase
 ==========
 
-A passphrase generator and utility for stripping words out of a list of words and definitions.
+A passphrase generator and utility for stripping words out of a list of words and definitions, and randomly recombining them with special characters to create more secure passwords.
 
 strip_words.py:
 
