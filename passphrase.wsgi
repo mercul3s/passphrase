@@ -1,0 +1,1 @@
+from passphrase_ui import app as application
