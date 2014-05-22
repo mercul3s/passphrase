@@ -5,8 +5,8 @@ This script will take a list of words, file specified on the command line,
 ask user for the number of words desired in the passphrase, and will return
 the random word passphrase with punctuation inserted between the words.
 Future improvements may include incorporating this into a web page, and asking
-what kind of slang to use as the base for the passphrase, checking to see the 
-security of the generated passphrase, and also giving the definitions for the 
+what kind of slang to use as the base for the passphrase, checking to see the
+security of the generated passphrase, and also giving the definitions for the
 words used in the passphrase.
 '''
 
@@ -15,7 +15,10 @@ from sys import argv
 import string
 
 # open file passed as arg, split on newlines, and return list of words
-readfile = argv[1]
+try:
+	readfile = argv[1]
+except IndexError:
+	print "You might want to include an input file for that..."
 def open_file(filename):
 	f = open(filename)
 	words = f.read()
@@ -27,7 +30,7 @@ def open_file(filename):
 def gen_pw(word_list):
 	punctuation = string.punctuation
 	pass_len = int(raw_input('Enter passphrase length: '))
-	passphrase = ""
+	passphrase = "%d" % random.randrange(1,9)
 	for length in xrange(pass_len):
 		passphrase += random.choice(word_list) + random.choice(punctuation)
 	return passphrase
